@@ -9,7 +9,6 @@ class IPilaDP { public: virtual void add() = 0; virtual void ordenar() = 0; };
 
 class AbsPilaDP : public IPilaDP { protected: NodoP* tope = nullptr; };
 
-// III. IMPLEMENTACION (Maneja el objeto Persona)
 class ImpPilaDP : public AbsPilaDP {
 public:
     void add() override {
@@ -18,7 +17,6 @@ public:
     }
 };
 
-// IV. CONCRETA
 class PilaPersonaD : public ImpPilaDP {
 public:
     void ordenar() override {
