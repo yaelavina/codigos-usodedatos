@@ -21,7 +21,7 @@ public:
         else { final->sig = nuevo; final = nuevo; }
         cont++;
     }
-    void ordenar() override { // QuickSort Iterativo (usando arreglo temporal para facilitar)
+    void ordenar() override {
         if (cont < 2) return;
         int* temp = new int[cont]; Nodo* aux = frente;
         for(int i=0; i<cont; i++) { temp[i] = aux->dato; aux = aux->sig; }
