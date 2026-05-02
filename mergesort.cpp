@@ -13,7 +13,6 @@ public:
         vector<Dato> datos = {{100}, {10}, {50}, {20}};
         int n = nums.size();
 
-        // MergeSort Iterativo (Bottom-Up)
         for (int tam = 1; tam < n; tam *= 2) {
             for (int izq = 0; izq < n - 1; izq += 2 * tam) {
                 int medio = min(izq + tam - 1, n - 1);
