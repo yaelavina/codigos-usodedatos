@@ -1,7 +1,6 @@
 #include <iostream>
 using namespace std;
 
-// I. INTERFAZ
 class IPilaB {
 public:
     virtual void push() = 0;
@@ -10,7 +9,6 @@ public:
     virtual void mostrar() = 0;
 };
 
-// II. CLASE ABSTRACTA (Atributos)
 class AbsPilaB : public IPilaB {
 protected:
     int *datos, tope, cap;
@@ -19,7 +17,6 @@ public:
     ~AbsPilaB() { delete[] datos; }
 };
 
-// III. CLASE CONCRETA
 class PilaBasica : public AbsPilaB {
 public:
     PilaBasica(int n) : AbsPilaB(n) {}
