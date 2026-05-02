@@ -13,7 +13,6 @@ public:
         Dato datos[] = {{50}, {10}, {40}, {20}};
         int n = 4;
 
-        // Pila para simular la recursión (QuickSort Iterativo)
         stack<pair<int, int>> pila;
         pila.push({0, n - 1});
 
@@ -24,7 +23,6 @@ public:
 
             if (ini >= fin) continue;
 
-            // Partición con el último elemento como pivote
             int pivote = nums[fin];
             int i = ini - 1;
             for (int j = ini; j < fin; j++) {
@@ -41,7 +39,6 @@ public:
             
             int p_idx = i + 1;
 
-            // Guardamos los rangos de las dos mitades
             pila.push({ini, p_idx - 1});
             pila.push({p_idx + 1, fin});
         }
