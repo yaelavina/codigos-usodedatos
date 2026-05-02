@@ -1,5 +1,5 @@
 #include <iostream>
-#include <stack> // Solo para guardar indices del QuickSort
+#include <stack> 
 using namespace std;
 
 class ICola {
@@ -24,7 +24,7 @@ public:
             a = (a + 1) % cap; arr[a] = v; cont++;
         }
     }
-    void ordenar() override { // QuickSort Iterativo
+    void ordenar() override { 
         if(cont < 2) return;
         stack<pair<int,int>> s; s.push({0, cont-1});
         while(!s.empty()){
