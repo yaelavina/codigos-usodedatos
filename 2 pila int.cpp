@@ -1,13 +1,11 @@
 #include <iostream>
 using namespace std;
 
-// Estructura del Nodo (Puntero al mismo tipo de dato)
 struct Nodo {
     int dato;
     Nodo* siguiente;
 };
 
-// I. INTERFAZ
 class IPilaD {
 public:
     virtual void push() = 0;
@@ -16,7 +14,6 @@ public:
     virtual void mostrar() = 0;
 };
 
-// II. CLASE ABSTRACTA
 class AbsPilaD : public IPilaD {
 protected:
     Nodo* tope;
@@ -24,7 +21,6 @@ public:
     AbsPilaD() : tope(nullptr) {}
 };
 
-// III. CLASE CONCRETA
 class PilaDinamicaBasica : public AbsPilaD {
 public:
     void push() override {
