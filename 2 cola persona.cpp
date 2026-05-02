@@ -14,7 +14,6 @@ struct NodoP {
     NodoP* sig;
 };
 
-// I. INTERFAZ
 class IColaDP {
 public:
     virtual void encolar() = 0;
@@ -22,14 +21,12 @@ public:
     virtual void mostrar() = 0;
 };
 
-// II. CLASE ABSTRACTA
 class AbsColaDP : public IColaDP {
 protected:
     NodoP *frente = nullptr, *final = nullptr;
     int cont = 0;
 };
 
-// III. IMPLEMENTACIÓN (Captura de datos)
 class ImpColaDP : public AbsColaDP {
 public:
     void encolar() override {
@@ -43,7 +40,6 @@ public:
     }
 };
 
-// IV. CLASE CONCRETA (Lógica de Ordenamiento)
 class ColaPersonaD : public ImpColaDP {
 public:
     void ordenar() override {
@@ -64,7 +60,7 @@ public:
             if(pi-1 > l) s.push({l, pi-1});
             if(pi+1 < h) s.push({p+1, h});
         }
-        // Devolvemos al Nodo
+        
         aux = frente;
         for(int i=0; i<cont; i++) { aux->p = temp[i]; aux = aux->sig; }
         delete[] temp;
