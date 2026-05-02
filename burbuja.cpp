@@ -8,13 +8,13 @@ struct Dato { int id; string etiqueta; };
 class OrdenadorBurbuja {
 public:
     void ordenar() {
-        // Datos a ordenar
+        
         int n = 4;
         int enteros[] = {5, 2, 8, 1};
         char letras[] = {'d', 'a', 'c', 'b'};
         Dato objetos[] = {{3, "Tres"}, {1, "Uno"}, {4, "Cuatro"}, {2, "Dos"}};
 
-        // Algoritmo Burbuja Iterativo
+
         for (int i = 0; i < n - 1; i++) {
             for (int j = 0; j < n - 1 - i; j++) {
                 if (enteros[j] > enteros[j+1]) swap(enteros[j], enteros[j+1]);
