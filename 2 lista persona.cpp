@@ -14,7 +14,6 @@ struct NodoL {
     NodoL* sig;
 };
 
-// I. INTERFAZ
 class IListaDP {
 public:
     virtual void agregar() = 0;
@@ -22,14 +21,12 @@ public:
     virtual void mostrar() = 0;
 };
 
-// II. CLASE ABSTRACTA
 class AbsListaDP : public IListaDP {
 protected:
     NodoL* cabeza = nullptr;
     int total = 0;
 };
 
-// III. IMPLEMENTACIÓN
 class ImpListaDP : public AbsListaDP {
 public:
     void agregar() override {
@@ -41,7 +38,6 @@ public:
     }
 };
 
-// IV. CLASE CONCRETA
 class ListaPersonaD : public ImpListaDP {
 public:
     void ordenar() override {
@@ -50,7 +46,6 @@ public:
         NodoL* aux = cabeza;
         for(int i=0; i<total; i++) { a[i] = aux->p; aux = aux->sig; }
 
-        // Mergesort Iterativo (Bottom-up)
         for (int m=1; m < total; m *= 2) {
             for (int l=0; l < total-1; l += 2*m) {
                 int mid = min(l + m - 1, total-1), r = min(l + 2*m - 1, total-1);
